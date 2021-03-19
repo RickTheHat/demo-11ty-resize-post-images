@@ -1,0 +1,24 @@
+---
+title: Posts
+layout: page.njk
+pagination:
+  data: posts
+  size: 3
+  alias: posts
+permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+---
+<ul>
+  {% for post in pagination.items %}
+    <li>
+      <a href="/posts/{{ post.title | slug }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<br>
+{% if pagination.previousPageHref %}
+  <a class="pagination-item prev" rel="prev" href="{{ pagination.previousPageHref }}">← Newer</a>
+{% endif %}
+  &nbsp;&nbsp;
+  {% if pagination.nextPageHref %}
+  <a class="pagination-item next" rel="next" href="{{ pagination.nextPageHref }}">Older →</a>
+{% endif %}
