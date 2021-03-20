@@ -4,7 +4,7 @@
   "description": "Extremely minimal Eleventy starter to kickstart a simple multi-page site / a nearly opinionless foundation to continue building on",
   "main": "index.html",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --quiet",
     "build": "eleventy"
   },
   "repository": {
@@ -27,5 +27,8 @@
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-cache-assets": "^2.1.0"
+  },
+  "devDependencies": {
+    "eleventy-plugin-page-assets": "^0.3.0"
   }
 }

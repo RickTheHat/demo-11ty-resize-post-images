@@ -1,11 +1,11 @@
 const Cache = require("@11ty/eleventy-cache-assets");
 
 module.exports = async function () {
-    // https://developer.github.com/v3/repos/#get
-    let json = await Cache("https://jsonplaceholder.typicode.com/posts", {
-        duration: "1d", // 1 day
-        type: "json" // also supports "text" or "buffer"
-    });
+    let json = await Cache("https://jsonplaceholder.typicode.com/posts",
+        {
+            duration: "1d", // 1 day
+            type: "json" // also supports "text" or "buffer"
+        });
 
     return json;
-};
+}

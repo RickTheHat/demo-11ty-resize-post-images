@@ -1,0 +1,24 @@
+---
+title: Photos
+layout: page.njk
+pagination:
+  data: photos
+  size: 3
+  alias: photos
+permalink: /photos/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+---
+<ul>
+    {% for photo in pagination.items %}
+        <li>
+            <a href="/photos/{{ photo.title | slug }}">{{ photo.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<br>
+{% if pagination.previousPageHref %}
+    <a class="pagination-item prev" rel="prev" href="{{ pagination.previousPageHref }}">← Newer</a>
+{% endif %}
+  &nbsp;&nbsp;
+  {% if pagination.nextPageHref %}
+    <a class="pagination-item next" rel="next" href="{{ pagination.nextPageHref }}">Older →</a>
+{% endif %}

@@ -1,0 +1,15 @@
+---
+eleventyComputed:
+  title: "{{ photo.title }}"
+layout: page.njk
+pagination:
+    data: photos
+    size: 1
+    alias: photo
+permalink: photos/{{ photo.title | slug }}/index.html
+---
+
+<p>
+    {{ photo.title }}
+    <img src="{{photo.url}}"/>
+</p>
